@@ -1,0 +1,1410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NEURAL NEXUS - AI Energy Waste Detective</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<!-- ===================== TOP NAVIGATION ===================== -->
+<header class="topbar">
+
+    <div class="brand" onclick="showPage('home')">
+        <div class="brand-icon">ϟ</div>
+
+        <div>
+            <h1>NEURAL <span>NEXUS</span></h1>
+            <small>AI ENERGY WASTE DETECTIVE</small>
+        </div>
+    </div>
+
+    <nav class="desktop-nav">
+        <button class="nav-link active" onclick="showPage('home')">Home</button>
+        <button class="nav-link" onclick="showPage('dashboard')">Dashboard</button>
+        <button class="nav-link" onclick="showPage('analysis')">Analysis</button>
+        <button class="nav-link" onclick="showPage('insights')">AI Insights</button>
+        <button class="nav-link" onclick="showPage('reports')">Reports</button>
+    </nav>
+
+    <button class="get-started" onclick="showPage('home')">
+        Get Started <span>→</span>
+    </button>
+
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+
+</header>
+
+<div id="mobileMenu" class="mobile-menu">
+    <button onclick="showPage('home');toggleMobileMenu()">Home</button>
+    <button onclick="showPage('dashboard');toggleMobileMenu()">Dashboard</button>
+    <button onclick="showPage('analysis');toggleMobileMenu()">Analysis</button>
+    <button onclick="showPage('insights');toggleMobileMenu()">AI Insights</button>
+    <button onclick="showPage('reports');toggleMobileMenu()">Reports</button>
+</div>
+
+
+<!-- ===================== HOME / SECTOR PAGE ===================== -->
+<section id="home" class="page active-page">
+
+    <div class="hero">
+
+        <div class="hero-content">
+
+            <p class="eyebrow">
+                SMART ENERGY MANAGEMENT FOR A SUSTAINABLE TOMORROW
+            </p>
+
+            <h2>
+                NEURAL <span>NEXUS</span>
+            </h2>
+
+            <h3>AI Energy Waste Detective</h3>
+
+            <p class="hero-description">
+                Detect Energy Waste. Reduce Costs.<br>
+                Build a Sustainable Future.
+            </p>
+
+            <div class="hero-buttons">
+                <button class="primary-btn" onclick="scrollToSectors()">
+                    <span class="circle-arrow">→</span>
+                    Explore Dashboard
+                </button>
+
+                <button class="secondary-btn" onclick="showHowItWorks()">
+                    <span class="play-icon">▶</span>
+                    How It Works
+                </button>
+            </div>
+
+        </div>
+
+        <div class="hero-visual">
+
+            <div class="energy-orb">
+                <div class="orb-glow"></div>
+                <div class="earth">🌍</div>
+                <div class="leaf-bolt">ϟ</div>
+            </div>
+
+            <div class="orbit orbit-one">
+                <span>🏠</span>
+            </div>
+
+            <div class="orbit orbit-two">
+                <span>🏭</span>
+            </div>
+
+            <div class="orbit orbit-three">
+                <span>🏢</span>
+            </div>
+
+            <div class="orbit orbit-four">
+                <span>🏥</span>
+            </div>
+
+            <div class="orbit orbit-five">
+                <span>🎓</span>
+            </div>
+
+            <div class="wind-turbine">♢</div>
+
+            <div class="hero-slogan">
+                Smarter<br>
+                Energy<br>
+                Brighter<br>
+                Tomorrow
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ===================== SECTOR SECTION ===================== -->
+    <div id="sectorSection" class="sector-section">
+
+        <div class="section-title">
+
+            <div class="title-line"></div>
+
+            <div>
+                <h2>Choose Your <span>Sector</span></h2>
+                <p>
+                    Get sector-specific insights, analysis and recommendations
+                    to optimize your energy usage.
+                </p>
+            </div>
+
+            <div class="title-line"></div>
+
+        </div>
+
+
+        <div class="sector-grid">
+
+            <!-- HOME -->
+            <article class="sector-card home-card">
+
+                <div class="sector-icon">🏠</div>
+
+                <h3>Home</h3>
+
+                <p>
+                    Monitor your household energy usage, find waste
+                    and save on your electricity bills.
+                </p>
+
+                <button onclick="selectSector('home')">
+                    Explore <span>→</span>
+                </button>
+
+            </article>
+
+
+            <!-- INDUSTRY -->
+            <article class="sector-card industry-card">
+
+                <div class="sector-icon">🏭</div>
+
+                <h3>Industries</h3>
+
+                <p>
+                    Optimize machinery and production energy usage
+                    for higher efficiency.
+                </p>
+
+                <button onclick="selectSector('industry')">
+                    Explore <span>→</span>
+                </button>
+
+            </article>
+
+
+            <!-- COMMERCIAL -->
+            <article class="sector-card commercial-card">
+
+                <div class="sector-icon">🏢</div>
+
+                <h3>Commercial</h3>
+
+                <p>
+                    Analyze business energy consumption and reduce
+                    operational costs.
+                </p>
+
+                <button onclick="selectSector('commercial')">
+                    Explore <span>→</span>
+                </button>
+
+            </article>
+
+
+            <!-- HEALTHCARE -->
+            <article class="sector-card healthcare-card">
+
+                <div class="sector-icon">🏥</div>
+
+                <h3>Healthcare</h3>
+
+                <p>
+                    Improve facility efficiency while maintaining
+                    reliable energy for critical care.
+                </p>
+
+                <button onclick="selectSector('healthcare')">
+                    Explore <span>→</span>
+                </button>
+
+            </article>
+
+
+            <!-- EDUCATION -->
+            <article class="sector-card education-card">
+
+                <div class="sector-icon">🎓</div>
+
+                <h3>Education</h3>
+
+                <p>
+                    Optimize campus energy usage and create a greener
+                    learning environment.
+                </p>
+
+                <button onclick="selectSector('education')">
+                    Explore <span>→</span>
+                </button>
+
+            </article>
+
+        </div>
+
+
+        <!-- BENEFITS -->
+        <div class="benefits">
+
+            <div class="benefit">
+                <div>🍃</div>
+                <section>
+                    <strong>Lower Energy Costs</strong>
+                    <small>Save money with smart insights</small>
+                </section>
+            </div>
+
+            <div class="benefit">
+                <div>🌱</div>
+                <section>
+                    <strong>Reduce Carbon Footprint</strong>
+                    <small>A cleaner, greener planet</small>
+                </section>
+            </div>
+
+            <div class="benefit">
+                <div>⚡</div>
+                <section>
+                    <strong>Smarter Energy Decisions</strong>
+                    <small>Data-driven recommendations</small>
+                </section>
+            </div>
+
+            <div class="benefit">
+                <div>🌐</div>
+                <section>
+                    <strong>A Sustainable Future</strong>
+                    <small>For generations to come</small>
+                </section>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===================== INPUT PAGE ===================== -->
+<section id="input" class="page">
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+                <div class="brand-icon">ϟ</div>
+                <div>
+                    <b>NEURAL <span>NEXUS</span></b>
+                    <small>AI ENERGY WASTE DETECTIVE</small>
+                </div>
+            </div>
+
+            <div class="sidebar-menu">
+
+                <button onclick="showPage('dashboard')">
+                    <span>⌂</span> Overview
+                </button>
+
+                <button class="active" onclick="showPage('input')">
+                    <span>＋</span> Energy Input
+                </button>
+
+                <button onclick="showPage('analysis')">
+                    <span>▥</span> Energy Analysis
+                </button>
+
+                <button onclick="showPage('insights')">
+                    <span>♧</span> AI Insights
+                </button>
+
+                <button onclick="showPage('reports')">
+                    <span>▤</span> Reports
+                </button>
+
+                <button onclick="showPage('settings')">
+                    <span>⚙</span> Settings
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <main class="dashboard-main">
+
+            <div class="dashboard-header">
+
+                <div>
+                    <div class="small-label">ENERGY INPUT</div>
+
+                    <h2>
+                        Add <span>Energy Data</span>
+                    </h2>
+
+                    <p>
+                        Enter your energy usage to detect waste and discover savings.
+                    </p>
+                </div>
+
+                <button class="outline-btn" onclick="showPage('home')">
+                    ← Change Sector
+                </button>
+
+            </div>
+
+
+            <!-- SELECTED SECTOR -->
+            <div class="selected-sector">
+
+                <div class="selected-sector-icon" id="selectedSectorIcon">
+                    🏠
+                </div>
+
+                <div>
+                    <small>SELECTED SECTOR</small>
+                    <h3 id="selectedSectorName">Home</h3>
+                </div>
+
+            </div>
+
+
+            <!-- SUB OPTIONS -->
+            <div id="subOptions" class="sub-options"></div>
+
+
+            <!-- INPUT METHOD -->
+            <div class="input-methods">
+
+                <button class="method-btn active" onclick="changeInputMethod('manual')">
+                    ✎ Manual Entry
+                </button>
+
+                <button class="method-btn" onclick="changeInputMethod('csv')">
+                    ⇧ CSV Upload
+                </button>
+
+                <button class="method-btn" onclick="useDemoData()">
+                    ◈ Demo Data
+                </button>
+
+            </div>
+
+
+            <!-- MANUAL FORM -->
+            <div id="manualInput" class="input-panel">
+
+                <div class="panel-heading">
+                    <div>
+                        <h3>Equipment Energy Input</h3>
+                        <p>
+                            Add appliances or equipment and calculate estimated usage.
+                        </p>
+                    </div>
+                    <span class="data-badge user-badge">USER ENTERED</span>
+                </div>
+
+                <form id="energyForm">
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+                            <label>Equipment / Appliance Name</label>
+                            <input
+                                id="equipmentName"
+                                type="text"
+                                placeholder="Example: Air Conditioner"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label>Wattage (W)</label>
+                            <input
+                                id="wattage"
+                                type="number"
+                                min="1"
+                                placeholder="Example: 1500"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label>Quantity</label>
+                            <input
+                                id="quantity"
+                                type="number"
+                                min="1"
+                                value="1"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label>Daily Usage Hours</label>
+                            <input
+                                id="hours"
+                                type="number"
+                                min="0.1"
+                                max="24"
+                                step="0.1"
+                                placeholder="Example: 6"
+                                required
+                            >
+                        </div>
+
+                        <div class="form-group">
+                            <label>Electricity Tariff (₹ / kWh)</label>
+                            <input
+                                id="tariff"
+                                type="number"
+                                min="0"
+                                step="0.01"
+                                value="8"
+                                required
+                            >
+                        </div>
+
+                    </div>
+
+                    <div class="calculation-preview">
+
+                        <div>
+                            <small>Estimated Daily Usage</small>
+                            <strong id="dailyResult">0.00 kWh</strong>
+                        </div>
+
+                        <div>
+                            <small>Estimated Monthly Usage</small>
+                            <strong id="monthlyResult">0.00 kWh</strong>
+                        </div>
+
+                        <div>
+                            <small>Estimated Monthly Cost</small>
+                            <strong id="costResult">₹ 0.00</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-actions">
+
+                        <button type="button" class="secondary-btn" onclick="clearForm()">
+                            Clear
+                        </button>
+
+                        <button type="submit" class="primary-btn">
+                            Add Equipment →
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- CSV -->
+            <div id="csvInput" class="input-panel hidden">
+
+                <div class="panel-heading">
+                    <div>
+                        <h3>Upload Energy CSV</h3>
+                        <p>
+                            Upload a CSV containing equipment energy information.
+                        </p>
+                    </div>
+                    <span class="data-badge upload-badge">UPLOADED DATA</span>
+                </div>
+
+                <div class="upload-box">
+
+                    <div class="upload-icon">⇧</div>
+
+                    <h3>Drop your CSV file here</h3>
+
+                    <p>
+                        Required columns:
+                        <b>name, wattage, quantity, hours, tariff</b>
+                    </p>
+
+                    <input
+                        id="csvFile"
+                        type="file"
+                        accept=".csv"
+                        onchange="handleCSV(event)"
+                    >
+
+                    <label for="csvFile" class="upload-btn">
+                        Choose CSV File
+                    </label>
+
+                    <p id="csvMessage" class="csv-message"></p>
+
+                </div>
+
+            </div>
+
+
+            <!-- DEMO -->
+            <div id="demoInput" class="input-panel hidden">
+
+                <div class="demo-box">
+
+                    <div class="demo-icon">◈</div>
+
+                    <h3>Demo Energy Dataset</h3>
+
+                    <p>
+                        Use clearly labelled sample data to explore the
+                        Neural Nexus dashboard.
+                    </p>
+
+                    <button class="primary-btn" onclick="useDemoData()">
+                        Load Demo Data →
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- CURRENT DATA -->
+            <div class="equipment-list-panel">
+
+                <div class="panel-heading">
+                    <div>
+                        <h3>Current Equipment Data</h3>
+                        <p id="equipmentCount">0 equipment added</p>
+                    </div>
+
+                    <button class="danger-btn" onclick="clearAllData()">
+                        Clear All
+                    </button>
+                </div>
+
+                <div id="inputEquipmentList" class="input-equipment-list">
+                    <div class="empty-state">
+                        <span>⚡</span>
+                        <p>No equipment added yet.</p>
+                    </div>
+                </div>
+
+                <button
+                    id="analyzeBtn"
+                    class="large-primary-btn"
+                    onclick="generateAnalysis()"
+                    disabled
+                >
+                    Analyze Energy Usage →
+                </button>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</section>
+
+
+<!-- ===================== DASHBOARD PAGE ===================== -->
+<section id="dashboard" class="page">
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+
+            <div class="sidebar-brand">
+                <div class="brand-icon">ϟ</div>
+                <div>
+                    <b>NEURAL <span>NEXUS</span></b>
+                    <small>AI ENERGY WASTE DETECTIVE</small>
+                </div>
+            </div>
+
+            <div class="sidebar-menu">
+
+                <button class="active" onclick="showPage('dashboard')">
+                    <span>⌂</span> Overview
+                </button>
+
+                <button onclick="showPage('input')">
+                    <span>＋</span> Energy Input
+                </button>
+
+                <button onclick="showPage('analysis')">
+                    <span>▥</span> Energy Analysis
+                </button>
+
+                <button onclick="showPage('insights')">
+                    <span>♧</span> AI Insights
+                </button>
+
+                <button onclick="showPage('reports')">
+                    <span>▤</span> Reports
+                </button>
+
+                <button onclick="showPage('settings')">
+                    <span>⚙</span> Settings
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <main class="dashboard-main">
+
+            <div class="dashboard-header">
+
+                <div>
+                    <div class="small-label">SMART ENERGY MONITORING</div>
+
+                    <h2>
+                        Energy <span>Overview</span>
+                    </h2>
+
+                    <p>
+                        Monitor consumption, uncover waste, and discover smarter savings.
+                    </p>
+                </div>
+
+                <div class="dashboard-selectors">
+
+                    <select id="dashboardSector" onchange="updateDashboard()">
+                        <option value="home">🏠 Home</option>
+                        <option value="industry">🏭 Industries</option>
+                        <option value="commercial">🏢 Commercial</option>
+                        <option value="healthcare">🏥 Healthcare</option>
+                        <option value="education">🎓 Education</option>
+                    </select>
+
+                    <select id="periodSelect" onchange="updateDashboard()">
+                        <option value="monthly">This Month</option>
+                        <option value="weekly">This Week</option>
+                        <option value="daily">Today</option>
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <!-- SUMMARY CARDS -->
+            <div class="metric-grid">
+
+                <div class="metric-card green">
+
+                    <div class="metric-top">
+                        <div class="metric-icon">⚡</div>
+                        <span>ENERGY</span>
+                    </div>
+
+                    <p>Total Energy Usage</p>
+
+                    <h3>
+                        <span id="totalUsage">0</span>
+                        <small>kWh</small>
+                    </h3>
+
+                    <div class="metric-change positive">
+                        ↑ 12% <span>vs. last month</span>
+                    </div>
+
+                </div>
+
+
+                <div class="metric-card cyan">
+
+                    <div class="metric-top">
+                        <div class="metric-icon">₹</div>
+                        <span>COST</span>
+                    </div>
+
+                    <p>Estimated Electricity Cost</p>
+
+                    <h3>
+                        ₹ <span id="totalCost">0</span>
+                    </h3>
+
+                    <div class="metric-change cyan-text">
+                        ↑ 8% <span>vs. last month</span>
+                    </div>
+
+                </div>
+
+
+                <div class="metric-card teal">
+
+                    <div class="metric-top">
+                        <div class="metric-icon">🍃</div>
+                        <span>SAVINGS</span>
+                    </div>
+
+                    <p>Potential Savings</p>
+
+                    <h3>
+                        ₹ <span id="potentialSavings">0</span>
+                    </h3>
+
+                    <div class="metric-change positive">
+                        ↑ 15% <span>estimated</span>
+                    </div>
+
+                </div>
+
+
+                <div class="metric-card orange">
+
+                    <div class="metric-top">
+                        <div class="metric-icon">⚠</div>
+                        <span>WASTE</span>
+                    </div>
+
+                    <p>Energy Waste Detected</p>
+
+                    <h3>
+                        <span id="wastePercent">0</span>%
+                    </h3>
+
+                    <div class="metric-change warning-text">
+                        ↓ 6% <span>optimization target</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CHART + INSIGHTS -->
+            <div class="dashboard-two-column">
+
+                <div class="chart-panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+                            <h3>▥ Energy Consumption</h3>
+                            <p>Consumption trend</p>
+                        </div>
+
+                        <div class="chart-tabs">
+
+                            <button
+                                class="chart-tab active"
+                                onclick="changeChartPeriod('daily', this)">
+                                Daily
+                            </button>
+
+                            <button
+                                class="chart-tab"
+                                onclick="changeChartPeriod('weekly', this)">
+                                Weekly
+                            </button>
+
+                            <button
+                                class="chart-tab"
+                                onclick="changeChartPeriod('monthly', this)">
+                                Monthly
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="chart-container">
+                        <canvas id="energyChart"></canvas>
+                    </div>
+
+                </div>
+
+
+                <div class="insights-panel">
+
+                    <div class="panel-heading">
+                        <div>
+                            <h3>♧ AI Energy Insights</h3>
+                            <p>Rule-based energy intelligence</p>
+                        </div>
+                    </div>
+
+                    <div id="dashboardInsights">
+
+                        <div class="insight-card danger">
+                            <div class="insight-icon">⚠</div>
+                            <div>
+                                <strong>High-consumption equipment</strong>
+                                <p>Add energy data to detect high usage.</p>
+                            </div>
+                            <span>›</span>
+                        </div>
+
+                        <div class="insight-card normal">
+                            <div class="insight-icon">💡</div>
+                            <div>
+                                <strong>Usage pattern</strong>
+                                <p>Analysis will appear after data is added.</p>
+                            </div>
+                            <span>›</span>
+                        </div>
+
+                        <div class="insight-card saving">
+                            <div class="insight-icon">🍃</div>
+                            <div>
+                                <strong>Potential savings</strong>
+                                <p>Optimization recommendations will appear here.</p>
+                            </div>
+                            <span>›</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BREAKDOWN + RECOMMENDATIONS -->
+            <div class="dashboard-two-column bottom-grid">
+
+                <div class="breakdown-panel">
+
+                    <div class="panel-heading">
+                        <div>
+                            <h3>◉ Equipment Breakdown</h3>
+                            <p>Energy consumption by equipment</p>
+                        </div>
+                    </div>
+
+                    <div class="table-wrapper">
+
+                        <table>
+
+                            <thead>
+                                <tr>
+                                    <th>Equipment</th>
+                                    <th>Usage</th>
+                                    <th>%</th>
+                                    <th>Energy</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="equipmentTable">
+
+                                <tr>
+                                    <td colspan="4" class="table-empty">
+                                        No energy data available.
+                                    </td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <div class="recommendations-panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+                            <h3>🍃 Savings Recommendations</h3>
+                            <p>Smart optimization opportunities</p>
+                        </div>
+
+                        <button onclick="showPage('insights')">
+                            View All →
+                        </button>
+
+                    </div>
+
+                    <div id="recommendationsList">
+
+                        <div class="recommendation">
+                            <div class="recommendation-icon">⚡</div>
+                            <div>
+                                <strong>Optimize Equipment Usage</strong>
+                                <p>Add data to receive recommendations.</p>
+                            </div>
+                            <span>₹ --</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <footer class="dashboard-footer">
+
+                <span>
+                    ⓘ Data is based on user input and estimated values.
+                    This is not real-time monitoring.
+                </span>
+
+                <div class="legend">
+                    <span><i class="legend-dot uploaded"></i> Uploaded Data</span>
+                    <span><i class="legend-dot entered"></i> User Entered</span>
+                    <span><i class="legend-dot demo"></i> Demo Data</span>
+                </div>
+
+            </footer>
+
+        </main>
+
+    </div>
+
+</section>
+
+
+<!-- ===================== ANALYSIS PAGE ===================== -->
+<section id="analysis" class="page">
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-icon">ϟ</div>
+                <div>
+                    <b>NEURAL <span>NEXUS</span></b>
+                    <small>AI ENERGY WASTE DETECTIVE</small>
+                </div>
+            </div>
+
+            <div class="sidebar-menu">
+                <button onclick="showPage('dashboard')"><span>⌂</span> Overview</button>
+                <button onclick="showPage('input')"><span>＋</span> Energy Input</button>
+                <button class="active"><span>▥</span> Energy Analysis</button>
+                <button onclick="showPage('insights')"><span>♧</span> AI Insights</button>
+                <button onclick="showPage('reports')"><span>▤</span> Reports</button>
+                <button onclick="showPage('settings')"><span>⚙</span> Settings</button>
+            </div>
+        </aside>
+
+        <main class="dashboard-main">
+
+            <div class="dashboard-header">
+                <div>
+                    <div class="small-label">ENERGY INTELLIGENCE</div>
+                    <h2>Energy <span>Analysis</span></h2>
+                    <p>Understand where your energy is being consumed and wasted.</p>
+                </div>
+
+                <button class="outline-btn" onclick="generateAnalysis()">
+                    ↻ Refresh Analysis
+                </button>
+            </div>
+
+            <div class="analysis-score-card">
+
+                <div class="score-circle">
+                    <span id="efficiencyScore">--</span>
+                    <small>/100</small>
+                </div>
+
+                <div>
+                    <small class="small-label">ENERGY EFFICIENCY SCORE</small>
+                    <h3 id="scoreTitle">Waiting for energy data</h3>
+                    <p id="scoreDescription">
+                        Add equipment data to generate an efficiency score.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="analysis-grid">
+
+                <div class="analysis-box">
+                    <span class="analysis-icon">📅</span>
+                    <small>Daily Consumption</small>
+                    <h3 id="analysisDaily">0 kWh</h3>
+                </div>
+
+                <div class="analysis-box">
+                    <span class="analysis-icon">📊</span>
+                    <small>Weekly Consumption</small>
+                    <h3 id="analysisWeekly">0 kWh</h3>
+                </div>
+
+                <div class="analysis-box">
+                    <span class="analysis-icon">📈</span>
+                    <small>Monthly Consumption</small>
+                    <h3 id="analysisMonthly">0 kWh</h3>
+                </div>
+
+                <div class="analysis-box">
+                    <span class="analysis-icon">₹</span>
+                    <small>Estimated Monthly Cost</small>
+                    <h3 id="analysisCost">₹ 0</h3>
+                </div>
+
+            </div>
+
+
+            <div class="full-analysis-panel">
+
+                <div class="panel-heading">
+                    <div>
+                        <h3>⚠ Energy Waste Detection</h3>
+                        <p>Potential issues identified from your entered data.</p>
+                    </div>
+                </div>
+
+                <div id="analysisAlerts" class="analysis-alerts">
+
+                    <div class="empty-state">
+                        <span>🔍</span>
+                        <p>No analysis available yet.</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+</section>
+
+
+<!-- ===================== AI INSIGHTS PAGE ===================== -->
+<section id="insights" class="page">
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-icon">ϟ</div>
+                <div>
+                    <b>NEURAL <span>NEXUS</span></b>
+                    <small>AI ENERGY WASTE DETECTIVE</small>
+                </div>
+            </div>
+
+            <div class="sidebar-menu">
+                <button onclick="showPage('dashboard')"><span>⌂</span> Overview</button>
+                <button onclick="showPage('input')"><span>＋</span> Energy Input</button>
+                <button onclick="showPage('analysis')"><span>▥</span> Energy Analysis</button>
+                <button class="active"><span>♧</span> AI Insights</button>
+                <button onclick="showPage('reports')"><span>▤</span> Reports</button>
+                <button onclick="showPage('settings')"><span>⚙</span> Settings</button>
+            </div>
+        </aside>
+
+
+        <main class="dashboard-main">
+
+            <div class="dashboard-header">
+                <div>
+                    <div class="small-label">INTELLIGENT ENERGY ANALYSIS</div>
+                    <h2>AI <span>Insights</span></h2>
+                    <p>Understand problems, causes and possible energy-saving actions.</p>
+                </div>
+            </div>
+
+            <div class="ai-banner">
+
+                <div class="ai-brain">♧</div>
+
+                <div>
+                    <small>NEURAL NEXUS RULE-BASED ENGINE</small>
+                    <h2>Energy Intelligence</h2>
+                    <p>
+                        Insights are generated from your entered energy data
+                        using transparent rule-based analysis. No trained
+                        machine-learning model is claimed.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div id="fullInsights" class="full-insights">
+
+                <div class="empty-state">
+                    <span>♧</span>
+                    <h3>No insights yet</h3>
+                    <p>Add energy data to generate personalized insights.</p>
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+</section>
+
+
+<!-- ===================== REPORTS PAGE ===================== -->
+<section id="reports" class="page">
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-icon">ϟ</div>
+                <div>
+                    <b>NEURAL <span>NEXUS</span></b>
+                    <small>AI ENERGY WASTE DETECTIVE</small>
+                </div>
+            </div>
+
+            <div class="sidebar-menu">
+                <button onclick="showPage('dashboard')"><span>⌂</span> Overview</button>
+                <button onclick="showPage('input')"><span>＋</span> Energy Input</button>
+                <button onclick="showPage('analysis')"><span>▥</span> Energy Analysis</button>
+                <button onclick="showPage('insights')"><span>♧</span> AI Insights</button>
+                <button class="active"><span>▤</span> Reports</button>
+                <button onclick="showPage('settings')"><span>⚙</span> Settings</button>
+            </div>
+        </aside>
+
+
+        <main class="dashboard-main">
+
+            <div class="dashboard-header">
+
+                <div>
+                    <div class="small-label">ENERGY HISTORY</div>
+                    <h2>Energy <span>Reports</span></h2>
+                    <p>View and download your current energy analysis.</p>
+                </div>
+
+                <button class="primary-btn" onclick="downloadCSV()">
+                    ↓ Download CSV
+                </button>
+
+            </div>
+
+
+            <div class="report-summary">
+
+                <div class="report-card">
+                    <small>Records</small>
+                    <strong id="reportRecords">0</strong>
+                </div>
+
+                <div class="report-card">
+                    <small>Total Usage</small>
+                    <strong id="reportUsage">0 kWh</strong>
+                </div>
+
+                <div class="report-card">
+                    <small>Monthly Cost</small>
+                    <strong id="reportCost">₹ 0</strong>
+                </div>
+
+                <div class="report-card">
+                    <small>Data Type</small>
+                    <strong id="reportDataType">No Data</strong>
+                </div>
+
+            </div>
+
+
+            <div class="report-table-panel">
+
+                <div class="panel-heading">
+                    <div>
+                        <h3>Energy Analysis History</h3>
+                        <p>Current session records</p>
+                    </div>
+                </div>
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+                            <tr>
+                                <th>Equipment</th>
+                                <th>Wattage</th>
+                                <th>Qty</th>
+                                <th>Hours</th>
+                                <th>Monthly kWh</th>
+                                <th>Monthly Cost</th>
+                                <th>Source</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="reportTable">
+
+                            <tr>
+                                <td colspan="7" class="table-empty">
+                                    No records available.
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+</section>
+
+
+<!-- ===================== SETTINGS PAGE ===================== -->
+<section id="settings" class="page">
+
+    <div class="dashboard-layout">
+
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <div class="brand-icon">ϟ</div>
+                <div>
+                    <b>NEURAL <span>NEXUS</span></b>
+                    <small>AI ENERGY WASTE DETECTIVE</small>
+                </div>
+            </div>
+
+            <div class="sidebar-menu">
+                <button onclick="showPage('dashboard')"><span>⌂</span> Overview</button>
+                <button onclick="showPage('input')"><span>＋</span> Energy Input</button>
+                <button onclick="showPage('analysis')"><span>▥</span> Energy Analysis</button>
+                <button onclick="showPage('insights')"><span>♧</span> AI Insights</button>
+                <button onclick="showPage('reports')"><span>▤</span> Reports</button>
+                <button class="active"><span>⚙</span> Settings</button>
+            </div>
+        </aside>
+
+
+        <main class="dashboard-main">
+
+            <div class="dashboard-header">
+                <div>
+                    <div class="small-label">APPLICATION SETTINGS</div>
+                    <h2>System <span>Settings</span></h2>
+                    <p>Configure energy analysis preferences.</p>
+                </div>
+            </div>
+
+
+            <div class="settings-grid">
+
+                <div class="settings-card">
+
+                    <h3>⚡ Energy Preferences</h3>
+
+                    <label>
+                        Default Electricity Tariff
+                        <input
+                            id="defaultTariff"
+                            type="number"
+                            value="8"
+                            min="0"
+                            step="0.01"
+                        >
+                    </label>
+
+                    <label>
+                        Carbon Factor (kg CO₂/kWh)
+                        <input
+                            id="carbonFactor"
+                            type="number"
+                            value="0.82"
+                            min="0"
+                            step="0.01"
+                        >
+                    </label>
+
+                    <button class="primary-btn" onclick="saveSettings()">
+                        Save Settings
+                    </button>
+
+                    <p id="settingsMessage"></p>
+
+                </div>
+
+
+                <div class="settings-card">
+
+                    <h3>🔌 Backend Connection</h3>
+
+                    <p class="settings-description">
+                        Frontend is prepared for Python FastAPI integration.
+                    </p>
+
+                    <div class="connection-status">
+                        <span></span>
+                        Frontend Mode
+                    </div>
+
+                    <p>
+                        API integration can be enabled in JavaScript
+                        using your FastAPI base URL.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </main>
+    </div>
+</section>
+
+
+<!-- ===================== HOW IT WORKS MODAL ===================== -->
+<div id="howModal" class="modal">
+
+    <div class="modal-content">
+
+        <button class="modal-close" onclick="closeHowItWorks()">×</button>
+
+        <div class="modal-icon">⚡</div>
+
+        <h2>How <span>Neural Nexus</span> Works</h2>
+
+        <div class="how-steps">
+
+            <div>
+                <strong>01</strong>
+                <h3>Choose Sector</h3>
+                <p>Select Home, Industry, Commercial, Healthcare or Education.</p>
+            </div>
+
+            <div>
+                <strong>02</strong>
+                <h3>Add Energy Data</h3>
+                <p>Enter equipment details manually or upload a CSV file.</p>
+            </div>
+
+            <div>
+                <strong>03</strong>
+                <h3>Detect Waste</h3>
+                <p>Rule-based analysis identifies high energy consumption.</p>
+            </div>
+
+            <div>
+                <strong>04</strong>
+                <h3>Save Energy</h3>
+                <p>Get practical recommendations and estimated savings.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div id="toast" class="toast"></div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
